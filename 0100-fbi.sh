@@ -16,4 +16,7 @@ if [[ -n $(ls | grep $today) ]]; then
     mkdir $today
     cd $today
     mv ../$today* ./
+    # - Set current video flag to today
+    cd ..
+    echo $today > cvf
 fi
