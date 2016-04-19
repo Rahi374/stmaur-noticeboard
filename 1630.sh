@@ -17,3 +17,4 @@
 #     - Kill video player
     sudo killall omxplayer
 #fi
+sudo killall fbi

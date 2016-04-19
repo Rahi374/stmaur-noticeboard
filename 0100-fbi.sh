@@ -20,3 +20,5 @@ if [[ -n $(ls | grep $today) ]]; then
     cd ..
     echo $today > cvf
 fi
+
+echo script run on $today >> log-0100
