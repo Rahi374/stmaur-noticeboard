@@ -18,19 +18,16 @@ if [[ -n $(cat list | grep $today) ]]; then
         # - Make a new directory for today
         mkdir $today
 	# - And set the current video flag to today
-	echo $today > ../noticeboard/cvf
-	# - Also cd into it
-	cd $today
-
-    # And if all the files are old
-    else
-	# cd into the dir determined by the current video flag
-	cd $(echo ../noticeboard/cvf)
+	echo $today > /home/pi/noticeboard/cvf
     fi
 
+    # cd in to the dir given by cvf
+    # either set just right now or unchanged from before
+    cd /home/pi/noticeboard-vid/$(echo /home/pi//noticeboard/cvf)
+    
     # Now download all the files
     # - Download files (if they exist)
-    for i in $(cat list | grep $today | awk '{ print $1 }')
+    for i in $(cat ../list | grep $today | awk '{ print $1 }')
     do drive download -i $i
     done
     
