@@ -23,7 +23,7 @@ if [[ -n $(cat list | grep $today) ]]; then
 
     # cd in to the dir given by cvf
     # either set just right now or unchanged from before
-    cd /home/pi/noticeboard-vid/$(echo /home/pi//noticeboard/cvf)
+    cd /home/pi/noticeboard-vid/$(cat /home/pi/noticeboard/cvf)
     
     # Now download all the files
     # - Download files (if they exist)
