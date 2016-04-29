@@ -19,18 +19,16 @@ sudo is also used under the assumption that the password won't need to be entere
 
 2. Download or git clone the project directory
 
-3. The directories that I set the scripts to use are /home/pi/noticeboard (this project directory) and /home/pi/noticeboard-vid (where all the images are downloaded to), so if you don't want to edit my scripts, mkdir /home/pi/noticeboard-vid and then mv this directory to /home/pi/noticeboard
+3. The directories that I set the scripts to use are `/home/pi/noticeboard` (this project directory) and `/home/pi/noticeboard-vid` (where all the images are downloaded to), so if you don't want to edit my scripts, `mkdir /home/pi/noticeboard-vid` and then `mv` this directory to `/home/pi/noticeboard`
 
 4. `chmod +x 0100.sh` and `chmod +x run.sh` (within this project directory)
 
-5. Since fbi can't be cronned (for some odd reason), my hacky solution is the run it from .bash_profile, so add the following to you .bash_profile (assuming the username is pi):
+5. Since fbi can't be cronned (for some odd reason), my hacky solution is the run it from `.bash_profile`, so add the following to you `.bash_profile` (assuming the username is pi):
 
-`
-source /home/pi/.bashrc
-/home/pi/noticeboard/run.sh
-`
+`source /home/pi/.bashrc`
+`/home/pi/noticeboard/run.sh`
 
-6. Add /home/pi/noticeboard/0100.sh to your crontab to run at whatever time you want. I set mine at 1 in the morning, with a sudo reboot 5 minutes before and after (5 minutes before since the internet randomly disconnects at my school and 5 minutes after to start the slideshow)
+6. Add `/home/pi/noticeboard/0100.sh` to your crontab to run at whatever time you want. I set mine at 1 in the morning, with a sudo reboot 5 minutes before and after (5 minutes before since the internet randomly disconnects at my school and 5 minutes after to start the slideshow)
 
 ### Usage
 
@@ -53,7 +51,7 @@ I think this is pretty much frozen. The only things that I might want to do:
 
 ### Passing on
 
-This project actually got decomissioned when the tech department at our school decided that they have a bigger budget than me and made something better and more expensive than me so this project is basically out.
+This project actually got decomissioned when the tech department at our school decided that they have a bigger budget than me and made something better and more expensive than me so this project is basically dead.
 
 ### Contributors
 
