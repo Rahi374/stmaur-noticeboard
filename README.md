@@ -17,7 +17,7 @@ sudo is also used under the assumption that the password won't need to be entere
 
 1. Set up the Google Drive cli client and initialize it to the Google Drive folder that will be used
 
-2. Download or git clone the project directory
+2. Download or git clone this project directory
 
 3. The directories that I set the scripts to use are `/home/pi/noticeboard` (this project directory) and `/home/pi/noticeboard-vid` (where all the images are downloaded to), so if you don't want to edit my scripts, `mkdir /home/pi/noticeboard-vid` and then `mv` this directory to `/home/pi/noticeboard`
 
@@ -25,10 +25,18 @@ sudo is also used under the assumption that the password won't need to be entere
 
 5. Since fbi can't be cronned (for some odd reason), my hacky solution is the run it from `.bash_profile`, so add the following to you `.bash_profile` (assuming the username is pi):
 
-`source /home/pi/.bashrc`
-`/home/pi/noticeboard/run.sh`
+   `source /home/pi/.bashrc`
+
+   `/home/pi/noticeboard/run.sh`
 
 6. Add `/home/pi/noticeboard/0100.sh` to your crontab to run at whatever time you want. I set mine at 1 in the morning, with a sudo reboot 5 minutes before and after (5 minutes before since the internet randomly disconnects at my school and 5 minutes after to start the slideshow)
+
+7. Enable auto-login to tty1 at user `pi`:
+
+   1. `sudo nano /etc/inittab`
+   2. Comment out `1:2345:respawn:/sbin/getty 115200 tty1`
+   3. Add this below the commented out line in step 2: `1:2345:respawn:/bin/login -f pi tty1 </dev/tty1 >/dev/tty1 2>&1`
+   4. Save, exit, reboot
 
 ### Usage
 
