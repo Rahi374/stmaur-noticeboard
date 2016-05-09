@@ -10,8 +10,14 @@ cd /home/pi/noticeboard-vid/
 # have to query Google Drive so many times
 drive list > ./list
 
+# Logging
+echo script run on $today >> /home/pi/log-0100
+
 # If there were any files uploaded today
 if [[ -n $(cat list | grep $today) ]]; then
+
+    # Logging - files uploaded today
+    echo Files uploaded today >> /home/pi/log-0100
 
     # If there is a file called new
     if [[ -n $(cat list | grep $today | grep new) ]]; then
@@ -19,6 +25,13 @@ if [[ -n $(cat list | grep $today) ]]; then
         mkdir $today
 	# - And set the current video flag to today
 	echo $today > /home/pi/noticeboard/cvf
+
+        # Logging - making new batch
+        echo Making new batch >> /home/pi/log-0100
+
+    else
+        # Logging - appending
+        echo Appending new files >> /home/pi/log-0100
     fi
 
     # cd in to the dir given by cvf
@@ -33,6 +46,9 @@ if [[ -n $(cat list | grep $today) ]]; then
     
     # And remove the new file flag
     rm new
-fi
+else
 
-echo script run on $today >> /home/pi/log-0100
+    # Logging - nothing uploaded today
+    echo Nothing uploaded today >> /home/pi/log-0100
+
+fi
