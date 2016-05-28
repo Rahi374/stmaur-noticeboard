@@ -40,12 +40,12 @@ Noticeboard (Main folder)
 	+-> 5.jpg
 ```
 
-In this example, pictures `1.jpg`, `2.jpg`, and `3.jpg` were all uploaded on 2016 May 29th, and the (empty) Google Doc called `new` was also created on the same day. The system them created a looping slideshow of these three pictures. On the next day, on 2016 May 30th, `4.jpg` and `5.jpg` were also uploaded, but since they were unaccompanied by a Google Doc called `new`, these two pictures were simply appended to the slideshow of `1.jpg`, `2.jpg`, and `3.jpg`.
+In this example, pictures `1.jpg`, `2.jpg`, and `3.jpg` were all uploaded on 2016 May 29th, and the (empty) Google Doc called `new` was also created on the same day. The system then created a looping slideshow of these three pictures. On the next day, on 2016 May 30th, `4.jpg` and `5.jpg` were also uploaded, but since they were unaccompanied by a Google Doc called `new`, these two pictures were simply appended to the slideshow of `1.jpg`, `2.jpg`, and `3.jpg`.
 
 Things to keep in mind:
 - The system downloads all the images at 23:30, so that is when "today" ends. That also means that any pictures uploaded between 23:30 and 23:59 will not be picked up, so do not upload any pictures during this time.
 - Keep the file extension, whatever it is (eg. .jpg, .png, etc)
-- If the day when you are uploading the file is not the same day as the folder of the day, then do not put the file in the folder and instead make a new one for today (eg. if it is May 30th 2016, do NOT put your pictures in the 2016-05-29 folder) and put the pictures there
+- If the day when you are uploading the file is not the same day as the folder of the day, then do not put the file in the folder and instead make a new one for today (eg. if it is May 30th 2016, do NOT put your pictures in the 2016-05-29 folder)
 - The pictures will actually be shown in alphabetical order, not numberical order. This means that `10.jpg` will be displayed before `2.jpg`, but `02.jpg` will be before `10.jpg`. Kee this in mind when naming your pictures.
 - Each picture will be displayed for 6 seconds. Keep this in mind when designing your pictures, or upload the same picture twice to have it be displayed for longer (but make sure they have different names (eg. `10-1.jpg` and `10-2.jpg`)).
 
